@@ -23,7 +23,7 @@ Getting Started
 
 ## My Accessibility Contributions
 
-In addition to core functionality, I prioritized accessibility features to ensure that the app is usable by a wide range of users, including those with disabilities. Here are the specific accessibility enhancements I implemented:
+I prioritized accessibility features to ensure that the app is usable by a wide range of users, including those with disabilities. Here are the specific accessibility enhancements I implemented:
 
 - **Bold Text**: Incorporated bold text where appropriate to improve readability for users with visual impairments.
 
@@ -33,7 +33,7 @@ In addition to core functionality, I prioritized accessibility features to ensur
 
  ## My UX Design Contributions
 
-In addition to functional improvements, I focused on enhancing the user experience (UX) design to create a more engaging and visually appealing app. Here are the specific UX design enhancements I implemented:
+I focused on enhancing the user experience (UX) design to create a more engaging and visually appealing app. Here are the specific UX design enhancements I implemented:
 
 - **Shadows**: Incorporated subtle shadows to card elements throughout the app to create depth and improve visual hierarchy. The addition of shadows helps to differentiate card components from the background and provides a more immersive user experience.
 
