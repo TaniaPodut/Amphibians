@@ -39,4 +39,12 @@ I focused on enhancing the user experience (UX) design to create a more engaging
 
 - **Rounded Corners**: Updated the design by adding more rounded corners to card elements throughout the app. This softens the overall aesthetic, creates a more modern look, and contributes to a friendlier user interface. The increased roundness of the corners also enhances visual consistency and cohesion across the app's design.
 
-- **Animation**: As part of enhancing the user experience, I implemented animations to improve the visual appeal and interactivity of the app. One notable animation I added was a spring animation applied to the columns within the app's layout. This spring animation creates a lively and dynamic effect, adding a sense of fluidity and responsiveness to the user interface. 
+- **Animation**: As part of enhancing the user experience, I implemented animations to improve the visual appeal and interactivity of the app. One notable animation I added was a spring animation applied to the columns within the app's layout. This spring animation creates a lively and dynamic effect, adding a sense of fluidity and responsiveness to the user interface.
+
+ ## My Testing Contributions
+
+I conducted thorough testing to verify the functionality and reliability of the app. Here are the specific testing contributions I made:
+
+- **Repository Testing**: Tested the repository layer to verify that data is retrieved from the API service correctly and passed to the ViewModel.
+
+- **ViewModel Testing**: Conducted tests to ensure that the ViewModel correctly processes and exposes data to the UI layer.  
