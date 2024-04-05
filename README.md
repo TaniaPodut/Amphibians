@@ -31,7 +31,7 @@ I prioritized accessibility features to ensure that the app is usable by a wide 
 
 - **Bigger Text**: Increased the text size in certain areas of the app to benefit users with visual impairments or those who prefer larger text for readability.
 
- ## My UX Design Contributions
+ ## My UI Design Contributions
 
 I focused on enhancing the user experience (UX) design to create a more engaging and visually appealing app. Here are the specific UX design enhancements I implemented:
 
