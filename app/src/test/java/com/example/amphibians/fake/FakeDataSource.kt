@@ -4,14 +4,14 @@ import com.example.amphibians.model.Amphibian
 
 object FakeDataSource {
 
-    const val nameOne = "name1"
-    const val nameTwo = "name2"
-    const val typeOne = "type1"
-    const val typeTwo = "type2"
-    const val descriptionOne = "description1"
-    const val descriptionTwo = "description2"
-    const val imgOne = "url.1"
-    const val imgTwo = "url.2"
+    private const val nameOne = "name1"
+    private const val nameTwo = "name2"
+    private const val typeOne = "type1"
+    private const val typeTwo = "type2"
+    private const val descriptionOne = "description1"
+    private const val descriptionTwo = "description2"
+    private const val imgOne = "url.1"
+    private const val imgTwo = "url.2"
     val photosList = listOf(
        Amphibian(
             name = nameOne,

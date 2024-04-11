@@ -1,6 +1,5 @@
 package com.example.amphibians.fake
 
-import com.example.amphibians.fake.FakeDataSource
 import com.example.amphibians.data.AmphibiansRepository
 import com.example.amphibians.model.Amphibian
 

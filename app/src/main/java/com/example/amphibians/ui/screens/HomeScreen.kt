@@ -16,9 +16,7 @@
 
 package com.example.amphibians.ui.screens
 
-import androidx.compose.animation.animateContentSize
-import androidx.compose.animation.core.Spring
-import androidx.compose.animation.core.spring
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -113,18 +111,13 @@ fun AmphibianCard(amphibian: Amphibian, modifier: Modifier = Modifier) {
     Card(
         modifier = modifier,
         shape = RoundedCornerShape(8.dp),
-        elevation = CardDefaults.cardElevation(48.dp),
+        elevation = CardDefaults.cardElevation(10.dp),
+        border = BorderStroke(3.dp, Color.DarkGray),
         colors = CardDefaults.cardColors(Color(204, 255, 229))
     ) {
         Column(
                horizontalAlignment = Alignment.CenterHorizontally,
                modifier = Modifier
-               .animateContentSize(
-                   animationSpec = spring(
-                       dampingRatio = Spring.DampingRatioLowBouncy,
-                       stiffness = Spring.StiffnessLow
-                   )
-               )
         ) {
             Text(
                 text = stringResource(R.string.amphibian_title, amphibian.name, amphibian.type),
@@ -143,7 +136,7 @@ fun AmphibianCard(amphibian: Amphibian, modifier: Modifier = Modifier) {
                     .crossfade(true)
                     .build(),
                 contentDescription = null,
-                contentScale = ContentScale.Fit,
+                contentScale = ContentScale.FillWidth,
                 alignment = Alignment.Center,
                 error = painterResource(id = R.drawable.ic_broken_image),
                 placeholder = painterResource(id = R.drawable.loading_img)
