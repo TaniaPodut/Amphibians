@@ -33,7 +33,7 @@ I prioritized accessibility features to ensure that the app is usable by a wide 
 
  ## My UI Design Contributions
 
-I focused on enhancing the user experience (UX) design to create a more engaging and visually appealing app. Here are the specific UX design enhancements I implemented:
+I focused on enhancing the user interface (UI) design to create a more engaging and visually appealing app. Here are the specific UI design enhancements I implemented:
 
 - **Shadows**: Incorporated subtle shadows to card elements throughout the app to create depth and improve visual hierarchy. The addition of shadows helps to differentiate card components from the background and provides a more immersive user experience.
 
