@@ -38,6 +38,8 @@ I focused on enhancing the user interface (UI) design to create a more engaging 
 - **Shadows**: Incorporated subtle shadows to card elements throughout the app to create depth and improve visual hierarchy. The addition of shadows helps to differentiate card components from the background and provides a more immersive user experience.
 
 - **Rounded Corners**: Updated the design by adding more rounded corners to card elements throughout the app. This softens the overall aesthetic, creates a more modern look, and contributes to a friendlier user interface. The increased roundness of the corners also enhances visual consistency and cohesion across the app's design.
+  
+- **Animation**: Incorporated spring animation to provide interactive feedback to users when they interact with button element. The subtle bounce or stretch effect of spring animations adds a playful touch, making interactions feel more intuitive and responsive.
 
  ## My Testing Contributions
 
