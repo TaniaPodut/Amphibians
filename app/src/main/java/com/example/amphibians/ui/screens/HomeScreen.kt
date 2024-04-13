@@ -16,6 +16,9 @@
 
 package com.example.amphibians.ui.screens
 
+import androidx.compose.animation.animateContentSize
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.spring
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -28,12 +31,21 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.KeyboardArrowDown
+import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -47,6 +59,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.amphibians.R
@@ -108,6 +121,7 @@ fun ErrorScreen(retryAction: () -> Unit, modifier: Modifier = Modifier) {
 
 @Composable
 fun AmphibianCard(amphibian: Amphibian, modifier: Modifier = Modifier) {
+    var expanded by remember { mutableStateOf(false) }
     Card(
         modifier = modifier,
         shape = RoundedCornerShape(8.dp),
@@ -116,8 +130,14 @@ fun AmphibianCard(amphibian: Amphibian, modifier: Modifier = Modifier) {
         colors = CardDefaults.cardColors(Color(204, 255, 229))
     ) {
         Column(
-               horizontalAlignment = Alignment.CenterHorizontally,
-               modifier = Modifier
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier
+                .animateContentSize(
+                animationSpec = spring(
+                    dampingRatio = Spring.DampingRatioLowBouncy,
+                    stiffness = Spring.StiffnessLow
+                )
+                )
         ) {
             Text(
                 text = stringResource(R.string.amphibian_title, amphibian.name, amphibian.type),
@@ -141,18 +161,40 @@ fun AmphibianCard(amphibian: Amphibian, modifier: Modifier = Modifier) {
                 error = painterResource(id = R.drawable.ic_broken_image),
                 placeholder = painterResource(id = R.drawable.loading_img)
             )
-            Text(
-                text = amphibian.description,
-                style = MaterialTheme.typography.titleMedium,
-                textAlign = TextAlign.Justify,
-                fontWeight = FontWeight.SemiBold,
-                modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
-                fontFamily = FontFamily.Serif
+            AmphibianButton(
+                expanded = expanded,
+                onClick = { expanded = !expanded },
             )
+            if (expanded) {
+                Text(
+                    text = amphibian.description,
+                    fontSize = 18.sp,
+                    textAlign = TextAlign.Justify,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
+                    fontFamily = FontFamily.Default
+                )
+            }
         }
     }
 }
-
+@Composable
+private fun AmphibianButton(
+    expanded: Boolean,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    IconButton(
+        onClick = onClick,
+        modifier = modifier
+    ) {
+        Icon(
+            imageVector = if (expanded) Icons.Filled.KeyboardArrowUp else Icons.Filled.KeyboardArrowDown,
+            contentDescription = stringResource(R.string.expand_button_content_description),
+            tint = MaterialTheme.colorScheme.secondary
+        )
+    }
+}
 @Composable
 private fun AmphibiansListScreen(
     amphibians: List<Amphibian>,
