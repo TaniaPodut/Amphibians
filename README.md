@@ -41,6 +41,10 @@ I focused on enhancing the user interface (UI) design to create a more engaging 
   
 - **Animation**: Incorporated spring animation to provide interactive feedback to users when they interact with button element. The subtle bounce or stretch effect of spring animations adds a playful touch, making interactions feel more intuitive and responsive.
 
+## Integration of Hilt and Dagger for Enhanced App Architecture
+
+Incorporated Hilt and Dagger dependency injection frameworks to enhance the project's architecture, facilitating easier testing, improved code organization, and reduced boilerplate code.
+
  ## My Testing Contributions
 
 I conducted thorough testing to verify the functionality and reliability of the app. Here are the specific testing contributions I made:
