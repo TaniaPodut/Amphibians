@@ -16,8 +16,10 @@
 
 package com.example.amphibians.data
 
+import android.app.Application
 import com.example.amphibians.model.Amphibian
 import com.example.amphibians.network.AmphibiansApiService
+import javax.inject.Inject
 
 /**
  * Repository retrieves amphibian data from underlying data source.
@@ -30,8 +32,9 @@ interface AmphibiansRepository {
 /**
  * Network Implementation of repository that retrieves amphibian data from underlying data source.
  */
-class DefaultAmphibiansRepository(
-    private val amphibiansApiService: AmphibiansApiService
+class DefaultAmphibiansRepository @Inject constructor(
+    private val amphibiansApiService: AmphibiansApiService,
+    private val appContext: Application
 ) : AmphibiansRepository {
     /** Retrieves list of amphibians from underlying data source */
     override suspend fun getAmphibians(): List<Amphibian> = amphibiansApiService.getAmphibians()

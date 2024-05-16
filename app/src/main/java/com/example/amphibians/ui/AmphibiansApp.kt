@@ -26,7 +26,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.amphibians.R
 import com.example.amphibians.ui.screens.AmphibiansViewModel
 import com.example.amphibians.ui.screens.HomeScreen
@@ -51,11 +51,10 @@ fun AmphibiansApp() {
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colorScheme.background
         ) {
-            val amphibiansViewModel: AmphibiansViewModel =
-                viewModel(factory = AmphibiansViewModel.Factory)
+            val viewModel = hiltViewModel<AmphibiansViewModel>()
             HomeScreen(
-                amphibiansUiState = amphibiansViewModel.amphibiansUiState,
-                retryAction = amphibiansViewModel::getAmphibians,
+                amphibiansUiState = viewModel.amphibiansUiState,
+                retryAction = viewModel::getAmphibians,
                 modifier = Modifier.fillMaxSize(),
                 contentPadding = it
             )
